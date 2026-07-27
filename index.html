@@ -33,8 +33,9 @@ h3{font-size:14px;margin:14px 2px 6px;color:var(--acc);font-weight:600}
 .stock.lo i{background:#c0562e}
 .stock.mid i{background:#c99a2e}
 .stock.hi i{background:#3a6b4f}
-.lnk{color:var(--acc);text-decoration:none;font-size:12px;border:1px solid var(--acc);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;vertical-align:middle}
-.lnk:hover{background:var(--acc);color:#fff}
+.lnk{color:var(--acc);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;padding:1px}
+.lnk:hover{color:#7a3a1e}
+.lnk svg{display:block}
 .grow>td{cursor:pointer}
 .grhead:hover td{background:#faf7f2}
 .vrow td{background:#fbf9f5;font-size:13px}
@@ -105,7 +106,7 @@ function cols(b){
  return ['','Бренд','Наименование',b.sizeh,'SKU','Цена','Наличие',''];
 }
 function photoCell(url){return '<td>'+(url?'<img class="thumb" src="'+url+'" data-full="'+url+'" onerror="this.classList.add(\'ph\')">':'')+'</td>'}
-const LNK_SVG='<svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>';
+const LNK_SVG='<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
 function linkIcon(url){return url?' <a class="lnk" href="'+attr(url)+'" target="_blank" rel="noopener noreferrer" title="Страница на сайте производителя" onclick="event.stopPropagation()">'+LNK_SVG+'</a>':''}
 function leafRow(b,e,inGroup){
  const title=[e.brand!=='—'?e.brand:'',e.core,e.size||''].filter(Boolean).join(' ');
